@@ -1,10 +1,6 @@
 # Interactify
 
-Interactify is a web project that showcases interactive and creative screens in a card format. It serves as an inspiration and exploration platform for creative developers and designers.
-
-## Project Inspiration
-
-This project is inspired by platforms that present interactive UI components and creative designs.
+Interactify is a web project that showcases interactive and creative screens. It serves as an inspiration and exploration platform for creative developers and designers.
 
 ## Reference Sites
 
