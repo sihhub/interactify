@@ -1,8 +1,8 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 // @ts-expect-error: Type mismatch due to library typing issue
 import { ThreeViewer } from "threepipe";
+import { Button } from "@nextui-org/button";
 // import { TweakpaneUiPlugin } from "@threepipe/plugin-tweakpane";
 
 export default function Device3DShowcase() {
@@ -17,6 +17,9 @@ export default function Device3DShowcase() {
   return (
     <div id="canvas-container">
       <canvas ref={canvasElRef}></canvas>
+      <div>
+        <Button>Click me</Button>
+      </div>
     </div>
   );
 }

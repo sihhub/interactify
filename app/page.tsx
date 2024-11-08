@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Device3DShowcase from "./components/Device3DShowcase";
+import Device3DShowcase from "./projects/Device3DShowcase";
 
 export default function Home() {
   return (

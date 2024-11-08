@@ -20,7 +20,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
+      "@/*": ["./app/*"],
       "threepipe": ["node_modules/threepipe/dist/index.mjs"]
     }
   },
