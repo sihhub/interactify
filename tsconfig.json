@@ -21,7 +21,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./app/*"],
-      "threepipe": ["node_modules/threepipe/dist/index.mjs"]
+      "threepipe": ["node_modules/threepipe/dist/index.mjs"],
+      "@threepipe/plugin-tweakpane": ["node_modules/@threepipe/plugin-tweakpane/dist/index.mjs"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

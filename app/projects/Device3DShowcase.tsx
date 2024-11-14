@@ -2,8 +2,9 @@
 import { useEffect, useRef } from "react";
 // @ts-expect-error: Type mismatch due to library typing issue
 import { ContactShadowGroundPlugin, IObject3D, LoadingScreenPlugin, ProgressivePlugin, SSAAPlugin, ThreeViewer } from "threepipe";
-import { Button } from "@nextui-org/button";
+// @ts-expect-error: Type mismatch due to library typing issue
 import { TweakpaneUiPlugin } from "@threepipe/plugin-tweakpane";
+import { Button } from "@nextui-org/button";
 
 export default function Device3DShowcase() {
   const canvasElRef = useRef<HTMLCanvasElement>(null);
