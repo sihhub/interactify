@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useRef } from "react";
 // @ts-expect-error: Type mismatch due to library typing issue
-import { ThreeViewer } from "threepipe";
+import { ContactShadowGroundPlugin, IObject3D, LoadingScreenPlugin, ProgressivePlugin, SSAAPlugin, ThreeViewer } from "threepipe";
 import { Button } from "@nextui-org/button";
-// import { TweakpaneUiPlugin } from "@threepipe/plugin-tweakpane";
+import { TweakpaneUiPlugin } from "@threepipe/plugin-tweakpane";
 
 export default function Device3DShowcase() {
   const canvasElRef = useRef<HTMLCanvasElement>(null);
@@ -26,35 +26,28 @@ export default function Device3DShowcase() {
 
 const init = async (canvas: HTMLCanvasElement) => {
   const viewer = new ThreeViewer({
+    // The canvas element where the scene will be rendered
     canvas,
+    // Enable/Disable MSAA
     msaa: false,
+    // Set the render scale automatically based on the device pixel ratio
     renderScale: "auto",
+    // Enable/Disable tone mapping
     tonemap: true,
-    // dropzone: {
-    //   allowedExtensions: ["png", "jpeg", "jpg", "webp", "svg", "hdr", "exr"],
-    //   autoImport: true,
-    //   addOptions: {
-    //     disposeSceneObjects: false,
-    //     autoSetBackground: false,
-    //     autoSetEnvironment: true, // when hdr, exr is dropped
-    //   },
-    // },
+    // Add some plugins
     plugins: [
-      // LoadingScreenPlugin,
-      // ProgressivePlugin,
-      // SSAAPlugin,
-      // ContactShadowGroundPlugin,
-      // // PickingPlugin,
-      // // PopmotionPlugin,
-      // // CameraViewPlugin,
-      // // TransformAnimationPlugin,
-      // // new TransformControlsPlugin(false),
-      // // CanvasSnapshotPlugin,
-      // // ContactShadowGroundPlugin,
+      // Show a loading screen while the model is downloading
+      LoadingScreenPlugin,
+      // Enable progressive rendering and SSAA
+      ProgressivePlugin,
+      SSAAPlugin,
+      // Add a ground with contact shadows
+      ContactShadowGroundPlugin,
     ],
   });
 
-  // const ui = viewer.addPluginSync(new TweakpaneUiPlugin(true));
+  // Add a plugin with a debug UI for tweaking parameters
+  const ui = viewer.addPluginSync(new TweakpaneUiPlugin(true));
 
   //Threepipe는 온라인 에디터를 제공하여 장면을 빠르게 구성하고, 플러그인 및 객체 속성을 설정할 수 있습니다.
   //https://threepipe.org/examples/tweakpane-editor/
