@@ -9,6 +9,8 @@ function WebGLCube() {
   const [width, setWidth] = useState<number>(0);
   const [height, setHeight] = useState<number>(0);
 
+  useEffect(() => {}, []);
+
   useEffect(() => {
     if (canvasElRef.current) {
       const canvas = canvasElRef.current;
